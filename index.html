@@ -1,0 +1,605 @@
+<html>
+ <head>
+  <title>
+   Decorative lights
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  
+
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1 {
+            font-family: 'DM Serif Display', serif; }
+        h3 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+  </style>
+ </head>
+ <body class="bg-F7F7F7">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="w-full h-[89px] px-4 py-4 bg-white shadow flex justify-between items-center">
+        <img class="w-[137px] h-[67px] ml-10" src="./image/Logo.png" alt="Logo">
+      
+        <!-- Hamburger Icon for mobile and tablet -->
+        <div class="lg:hidden flex items-center cursor-pointer" id="hamburger-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </div>
+      
+        <!-- Desktop Menu (visible on large screens) -->
+        <div class="hidden lg:flex items-center gap-10 mr-10">
+          <a href="#" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Home</a>
+          <a href="About.html" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">About Us</a>
+          <a href="#indoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+          <a href="#outdoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+          <a href="#decorative-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+          <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+        </div>
+      </div>
+      
+      <!-- Sidebar (Mobile and Tablet) -->
+      <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform ease-in-out duration-300 z-50" id="sidebar">
+        <div class="flex justify-end p-4">
+          <button class="text-2xl" id="close-sidebar">×</button>
+        </div>
+        <div class="flex flex-col items-center gap-6 p-4">
+          <a href="#" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Home</a>
+          <a href="#about" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">About Us</a>
+          <a href="#indoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+          <a href="#outdoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+          <a href="#decorative-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+          <a href="#partner" class="bg-[#c2282d] text-white py-2 px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+        </div>
+      </div>
+      
+      <!-- Overlay for Sidebar -->
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-50 z-40 hidden" id="overlay"></div>
+      
+      <script>
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebar = document.getElementById('close-sidebar');
+        const overlay = document.getElementById('overlay');
+      
+        // Show sidebar when hamburger icon is clicked
+        hamburgerIcon.addEventListener('click', () => {
+          sidebar.style.transform = 'translateX(0)';
+          overlay.classList.remove('hidden');
+        });
+      
+        // Hide sidebar when close button or overlay is clicked
+        closeSidebar.addEventListener('click', () => {
+          sidebar.style.transform = 'translateX(100%)';
+          overlay.classList.add('hidden');
+        });
+      
+        overlay.addEventListener('click', () => {
+          sidebar.style.transform = 'translateX(100%)';
+          overlay.classList.add('hidden');
+        });
+      </script>   
+  </header>
+
+
+  
+  <section 
+  class="w-full max-w-[1226px] h-[441px] relative mx-auto mt-[60px] rounded-xl transition-all duration-1000" 
+  id="carouselSection"
+  style="background-image: url('./image/1.png'); background-size: cover; background-position: center;">
+  <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+  
+  <!-- Pagination/Navigation dots -->
+  <div id="pagination" class="absolute left-1/2 bottom-[20px] transform -translate-x-1/2 flex gap-3.5 items-center">
+    <div class="w-4 h-4 bg-[#c2282d] rounded-full"></div>
+    <div class="w-4 h-4 bg-[#d9d9d9] rounded-full"></div>
+    <div class="w-4 h-4 bg-[#d9d9d9] rounded-full"></div>
+  </div>
+
+  <h1 class="absolute left-1/2 top-[30%] transform -translate-x-1/2 text-center text-white text-[30px] sm:text-[48px] md:text-[48px] font-regular font-['DM Serif Display'] leading-[36px] sm:leading-[50px] md:leading-[60px] px-4" 
+  style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+Brighten Your World with <br />Innovative LED Lighting
+</h1>
+
+</section>
+
+<script>
+  const images = [
+    './image/1.png',
+    './image/2.png',
+    './image/3.png'
+  ];
+
+  let currentIndex = 0;
+  const carouselSection = document.getElementById('carouselSection');
+  const pagination = document.getElementById('pagination').children;
+
+  function changeImage() {
+    // Update background image
+    carouselSection.style.backgroundImage = `url(${images[currentIndex]})`;
+
+    // Update pagination dots
+    for (let i = 0; i < pagination.length; i++) {
+      if (i === currentIndex) {
+        pagination[i].classList.add('bg-[#c2282d]');
+        pagination[i].classList.remove('bg-[#d9d9d9]');
+      } else {
+        pagination[i].classList.remove('bg-[#c2282d]');
+        pagination[i].classList.add('bg-[#d9d9d9]');
+      }
+    }
+
+    // Update index for next cycle
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  // Change image every 3 seconds
+  setInterval(changeImage, 3000);
+
+  // Initial image load
+  changeImage();
+</script>
+
+
+<section class="w-full max-w-[1227px] h-auto flex flex-col justify-center items-center px-4 mx-auto mt-[51px]">
+  <div class="flex flex-col items-center justify-start gap-2 sm:gap-4 px-4">
+    <!-- Header -->
+    <h1 class="text-center text-[#c2282d] text-[24px] sm:text-[32px] md:text-[40px] font-regular font-['DM Serif Display'] tracking-wide leading-tight">
+      Our Trending Product
+    </h1>
+
+    <p class="text-center text-[#292c31] text-xs sm:text-sm md:text-base font-normal font-['Roboto'] leading-relaxed">
+      Powering Homes and Businesses with Innovation and Efficiency
+    </p>
+  </div>      
+
+  <!-- Scrollable Product Cards -->
+  <div class="w-full h-auto overflow-x-auto mt-4">
+    <div class="flex gap-4 sm:gap-6 overflow-x-auto pb-4">
+      <!-- Product Item Template -->
+      <div class="product-card">
+        <div class="w-full text-center">
+          <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
+          <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
+        </div>
+        <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/k1.png" alt="RIMLESS DOWNLIGHT" />
+      </div>
+
+      <!-- Repeat Product Item with different text and images -->
+      <div class="product-card">
+        <div class="w-full text-center">
+          <div class="text-black text-lg sm:text-xl font-bold">DELTA</div>
+          <div class="text-black text-xs sm:text-sm">COB</div>
+        </div>
+        <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/Delta 1.png" alt="DELTA COB" />
+      </div>
+
+      <div class="product-card">
+        <div class="w-full text-center">
+          <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
+          <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
+        </div>
+        <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/Delta 1.png" alt="RIMLESS DOWNLIGHT" />
+      </div>
+
+      <div class="product-card">
+        <div class="w-full text-center">
+          <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
+          <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
+        </div>
+        <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/k1.png" alt="RIMLESS DOWNLIGHT" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-card {
+    width: 220px;
+    height: 300px;
+    background: #fefefe;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 640px) {
+    .product-card {
+      flex: 0 0 calc(50% - 16px); /* Show two cards per row */
+      max-width: calc(50% - 16px);
+    }
+
+    .flex {
+      flex-wrap: wrap; /* Wrap cards to new rows if necessary */
+    }
+  }
+</style>
+
+    
+  
+  <section class="bg-cover bg-center text-white py-12 mt-[58px] md:mt-[131px] h-auto md:h-[413px] relative" style="background-image: url('./image/11P.png');">
+    <!-- Custom color overlay with 80% opacity -->
+    <div class="absolute inset-0 bg-[#C2282D]/80"></div>
+
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center relative px-4 md:px-0 mt-6">
+        <!-- Happy Clients -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s.png" alt="Happy Clients Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">50000+</h2>
+            <p class="text-base md:text-[24px]">Happy Clients</p>
+        </div>
+
+        <!-- Industrial Projects -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s2.png" alt="Industrial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">45+</h2>
+            <p class="text-base md:text-[24px]">Industrial Projects</p>
+        </div>
+
+        <!-- Commercial Projects -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s3.png" alt="Commercial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">100K</h2>
+            <p class="text-base md:text-[24px]">Commercial Projects</p>
+        </div>
+
+        <!-- Residential Projects -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s4.png" alt="Residential Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">1000+</h2>
+            <p class="text-base md:text-[24px]">Residential Projects</p>
+        </div>
+    </div>
+</section>
+
+<section class="w-full max-w-[1174px] mx-auto flex flex-col items-center mt-[58px] px-4">
+    <!-- Section Header -->
+    <header class="text-center mb-8">
+        <h1 class="text-[#c2282d] text-[28px] sm:text-[32px] md:text-[36px] font-regular font-['DM Serif Display'] tracking-wide leading-tight">
+          We Have Lighting Category
+        </h1>
+        <p class="text-[#292c31] text-[14px] sm:text-[16px] md:text-lg mt-4 sm:mt-6">
+          Discover the Perfect Lighting for Your Home, Office, or Outdoor Space
+        </p>
+      </header>
+      
+  
+    <!-- Lighting Categories -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-[32px] sm:gap-[50px] md:gap-[63px] mt-[51px] sm:mt-[51px]">
+        <!-- Indoor Lights -->
+        <div class="flex flex-col items-center">
+          <img class="w-full h-[250px] sm:h-[300px] md:w-[547px] md:h-[548px] rounded-tr-[270px]" src="./image/f1.png" alt="Indoor Lights" />
+          <div class="flex justify-between items-center mt-2 w-full md:w-auto">
+            <div>
+              <h2 class="text-[#292f36] text-[18px] sm:text-[20px] md:text-[24px] font-bold">Indoor Lights</h2>
+              <p class="text-[#4d4f52] text-[16px] sm:text-[18px] md:text-[22px] w-full md:w-[480px]">
+                The perfect blend of style, functionality, and energy efficiency.
+              </p>
+            </div>
+            <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] bg-[#c2282d] rounded-full flex items-center justify-center">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5" />
+                  </svg>                  
+              </div>
+              
+          </div>
+        </div>
+      
+        <!-- Outdoor Lights -->
+        <div class="flex flex-col items-center">
+          <img class="w-full h-[250px] sm:h-[300px] md:w-[547px] md:h-[548px] rounded-tr-[270px]" src="./image/f2.png" alt="Outdoor Lights" />
+          <div class="flex justify-between items-center mt-2 w-full md:w-auto">
+            <div>
+              <h2 class="text-[#292f36] text-[18px] sm:text-[20px] md:text-[24px] font-bold">Outdoor Lights</h2>
+              <p class="text-[#4d4f52] text-[16px] sm:text-[18px] md:text-[22px] w-full md:w-[480px]">
+                Take your outdoor spaces to the next level with Trabo LED Lights.
+              </p>
+            </div>
+            <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] bg-[#c2282d] rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Decorative Lights -->
+        <div class="flex flex-col items-center">
+          <img class="w-full h-[250px] sm:h-[300px] md:w-[547px] md:h-[548px] rounded-tr-[270px]" src="./image/f3.png" alt="Decorative Lights" />
+          <div class="flex justify-between items-center mt-2 w-full md:w-auto">
+            <div>
+              <h2 class="text-[#292f36] text-[18px] sm:text-[20px] md:text-[24px] font-bold">Decorative Lights</h2>
+              <p class="text-[#4d4f52] text-[16px] sm:text-[18px] md:text-[22px] w-full md:w-[480px]">
+                Create ambiance, beauty, and style with our decorative LEDs.
+              </p>
+            </div>
+            <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] bg-[#c2282d] rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Strip Lights -->
+        <div class="flex flex-col items-center">
+          <img class="w-full h-[250px] sm:h-[300px] md:w-[547px] md:h-[548px] rounded-tr-[270px]" src="./image/f4.png" alt="Strip Lights" />
+          <div class="flex justify-between items-center mt-2 w-full md:w-auto">
+            <div>
+              <h2 class="text-[#292f36] text-[18px] sm:text-[20px] md:text-[24px] font-bold">Strip Lights</h2>
+              <p class="text-[#4d4f52] text-[16px] sm:text-[18px] md:text-[22px] w-full md:w-[480px]">
+                Focus on energy efficiency and ease of installation.
+              </p>
+            </div>
+            <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] bg-[#c2282d] rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+
+  <section class="flex flex-wrap sm:flex-nowrap justify-center mx-auto sm:mt-[100px] sm:ml-[100px]">
+    <!-- First Section -->
+    <div class="relative w-full sm:w-[1400px] h-[677px] rounded-lg"
+      style="background-image: url('./image/d1.png'); background-size: cover; background-position: center;">
+      
+      <!-- Solid Background Overlay -->
+      <div class="absolute inset-0 bg-[#c2282d]/95 rounded-lg"></div>
+  
+      <!-- Content Block -->
+      <div class="absolute left-[10px] sm:left-[58px] top-[20%] sm:top-[111px] w-[90%] sm:w-[573px] h-auto sm:h-[534px] flex flex-col gap-4 sm:gap-2 px-4">
+        <h1 class="text-white text-[24px] sm:text-[32px] font-semibold font-['Roboto'] leading-[36px] sm:leading-[48px] text-center sm:text-left">
+          About Trabo
+        </h1>
+        <p class="text-white text-lg sm:text-2xl font-normal font-['Roboto'] leading-7 sm:leading-9 text-center sm:text-left">
+          TRABO illuminates your world with state-of-the-art lighting solutions that will transform your living spaces.
+          As a leading provider of LED strip lights, we offer high-quality products at competitive prices, blending aesthetics with technological expertise.
+        </p>
+      </div>
+  
+    </div>
+  
+    <!-- Second Section -->
+    <div class="flex justify-center items-center flex-wrap gap-[20px] mt-[10px] ml-[0px] w-full">
+      <!-- Second Section Block 1 -->
+      <div class="relative w-full sm:w-[495px] h-[314px] bg-[#79ccc4] rounded-lg">
+        <!-- Image -->
+        <img class="absolute w-[150px] sm:w-[250px] h-[160px] sm:h-[270px] left-[0px] top-[40px]" src="./image/Alpha Cylinder 1.png" />
+        
+        <!-- Text -->
+        <div class="absolute left-[110px] sm:left-[188px] top-[71px] text-[#232323] text-[24px] sm:text-[32px] font-semibold font-['Roboto'] leading-[36px] sm:leading-[48px]">
+          Unbeatable quality
+        </div>
+        <div class="absolute left-[110px] sm:left-[188px] top-[124px] w-[70%] sm:w-[251px] h-auto text-[#232323] text-base sm:text-lg font-normal font-['Roboto'] leading-normal">
+          Industry-leading quality and reliability ensure our lights maintain output and light quality throughout their lifetime.
+        </div>
+      </div>
+  
+      <!-- Second Section Block 2 -->
+      <div class="relative w-full sm:w-[495px] h-[314px] bg-[#ffc857] rounded-lg">
+        <div class="absolute inset-0 bg-[#ffc857] rounded-lg"></div>
+        <img class="absolute w-[150px] h-[143px] left-[0px] top-[0px]" src="./image/Omega 1.png" />
+        <img class="absolute w-[150px] h-[180px] sm:w-[200px] sm:h-[240px] right-[0px] bottom-[0px]" src="./image/Rimlesss 1.png" />
+        <div class="absolute left-[35px] sm:left-[35px] top-[91px] w-[70%] sm:w-[276px] h-auto">
+          <h2 class="text-[#232323] text-[24px] sm:text-[32px] font-semibold">Leading the way</h2>
+          <p class="text-[#232323] text-base sm:text-lg">Trabo lighting offers more than just high-quality, easy-to-install solutions—it's setting the industry reference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+  
+  
+
+
+
+
+
+
+  <section class="w-full max-w-[1257px] h-auto relative mx-auto px-4 sm:px-0 mt-[178px]">
+    <!-- Text Section -->
+    <div class="w-full max-w-[737px] mx-auto mt-4 sm:mt-0 px-4">
+        <h1 class="text-center text-[#c2282d] text-[24px] sm:text-[28px] md:text-[36px] font-regular font-['DM Serif Display'] tracking-wide leading-tight">
+          Brand Who Trust Us
+        </h1>    
+        <div class="text-center text-[#4d4f52] text-[12px] sm:text-[14px] md:text-base lg:text-lg font-normal font-['Roboto'] leading-normal tracking-tight mt-2 sm:mt-4">
+          Leading Brands and Homes Trust Trabo to Light Up Their Spaces with Quality and Efficiency
+        </div>
+      </div>
+      
+    
+    <!-- Image Section -->
+    <div class="flex flex-wrap justify-center sm:justify-start items-center gap-6 sm:gap-[19px] mt-4 sm:mt-[81px]">
+      <!-- Image Block 1 -->
+      <div class="w-full sm:w-[300px] h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/Dom.png" alt="Dom logo" />
+      </div>
+  
+      <!-- Image Block 2 -->
+      <div class="w-full sm:w-[300px] h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/netlink.png" alt="Netlink logo" />
+      </div>
+  
+      <!-- Image Block 3 -->
+      <div class="w-full sm:w-[300px] h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/oport.png" alt="Oport logo" />
+      </div>
+  
+      <!-- Image Block 4 -->
+      <div class="w-full sm:w-[300px] h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/LNCT.png" alt="LNCT logo" />
+      </div>
+    </div>
+  </section>
+  
+  
+ 
+ 
+  <section class="w-full max-w-[1180px] max-h-[594px] mx-auto mt-[81px] px-4">
+    <!-- Outer Container with Background and Shadow -->
+    <div class="w-full bg-white rounded-[34px] shadow-lg overflow-hidden relative">
+      <div class="h-auto p-6">
+        <!-- Title and Description Section -->
+        <div class="relative">
+            <!-- Section Title -->
+            <h2 class="text-center text-[#545454] text-[32px] font-semibold font-['Roboto'] capitalize leading-9 sm:text-[24px] xs:text-[20px]">
+              What Our Customers are Saying
+            </h2>
+          
+            <!-- Customer Feedback Text -->
+            <p class="text-center text-[#545454] text-[22px] font-regular font-['Roboto'] leading-10 mt-[32px] sm:text-[18px] xs:text-[16px] sm:leading-8 xs:leading-7">
+              We switched to Trabo LED Lights for our office, and the difference is amazing! The lights are bright, energy-efficient, and make our space feel welcoming. We've already noticed a drop in our energy bills, and they’re much more durable than our old bulbs. Highly recommend for any business looking to upgrade!
+            </p>
+          </div>
+          
+    
+        <!-- Customer Profile Image and Name -->
+        <div class="text-center mt-6 sm:mt-12 xs:mt-8">
+          <div class="inline-block relative">
+            <img class="w-[133px] h-[133px] rounded-full mx-auto" src="./image/Ellipse 4.png" alt="Pooja Nigam's profile image" />
+            <div class="mt-4">
+              <p class="text-[#c2282d] text-[22px] font-semibold sm:text-[18px] xs:text-[16px]">Pooja Nigam</p>
+              <p class="text-[#545454] text-[22px] font-normal sm:text-[16px] xs:text-[14px]">Interior Designer</p>
+            </div>
+          </div>
+        </div>
+
+          <!-- Left and Right Navigation Buttons -->
+          <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-[#c2282d] text-white p-2 rounded-full">
+            <!-- Left Arrow SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-[#c2282d] text-white p-2 rounded-full">
+            <!-- Right Arrow SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+        
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+
+  <section 
+  class="w-full h-[387px] relative mx-auto mt-[533px]" 
+  style="background-image: url('./image/12P.png'); background-size: cover; background-position: center;">
+  
+  <!-- Overlay Background -->
+  <div class="absolute inset-0 bg-black/70"></div>
+  
+  <!-- Content Wrapper -->
+  <div class="w-full max-w-[1440px] h-auto absolute left-1/2 transform -translate-x-1/2 top-[20%] md:top-[89px] text-center px-6">
+    <!-- Heading -->
+    <h3 class="text-white text-[28px] sm:text-[32px] md:text-[50px] font-regular font-['DM Serif Display'] leading-[36px] sm:leading-[40px] md:leading-[62.5px]">
+      Become A Partner
+    </h3>
+
+    <!-- Subheading -->
+    <p class="text-white text-[16px] sm:text-[18px] md:text-[22px] font-['Jost'] font-medium leading-[24px] sm:leading-[28px] md:leading-[33px] tracking-tight mt-3 sm:mt-4">
+      Join the Trabo LED Lights Family
+    </p>
+
+    <!-- CTA Button -->
+    <a href="#" class="bg-[#c2282d] text-white text-[16px] sm:text-[18px] font-['Roboto'] font-semibold rounded-[18px] shadow mt-5 inline-block flex items-center justify-center w-[180px] h-[55px] sm:w-[200px] sm:h-[65px] md:w-[237px] md:h-[75px] mx-auto">
+      Contact Us
+      <img src="./image/Vector.png" alt="Arrow Icon" class="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+    </a>
+  </div>
+</section>
+
+  
+<footer class="bg-white py-8 mt-[111px]">
+    <!-- Container for Footer -->
+<div class="container mx-auto mb-[50px] px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- First Column: Logo and Social Media -->
+      <div>
+        <img alt="Trabo LED Lights Logo" class="h-[67px] w-[137px]" src="./image/Logo.png" />
+        <p class="mt-[18px] text-gray-600 font-['Roboto']">
+          It is a long established fact that a reader will be distracted looking.
+        </p>
+        <div class="flex space-x-4 mt-[18px]">
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Second Column: Pages -->
+      <div>
+        <h3 class="text-[25px] font-regular font-['DM Serif Display']">Pages</h3>
+        <ul class="mt-2 space-y-2">
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Home</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">About us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Third Column: Services -->
+      <div>
+        <h3 class="text-[25px] font-regular font-['DM Serif Display']">Services</h3>
+        <ul class="mt-2 space-y-2">
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Indoor Lights</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Outdoor Lights</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Decorative Lights</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Strip Lights</a></li>
+        </ul>
+      </div>
+  
+      <!-- Fourth Column: Contact -->
+      <div>
+        <h3 class="text-[25px] font-regular font-['DM Serif Display']">Contact</h3>
+        <p class="mt-2 text-gray-600 font-['Roboto']">
+          Address: 2nd floor, Above HDFC Bank, Alark Shopping Mall, Lalghat Square, Bhopal (MP)
+        </p>
+        <p class="mt-2 text-gray-600 font-['Roboto']">Email: hellotrabo@gmail.com</p>
+        <p class="mt-2 text-gray-600 font-['Roboto'] font-bold">Contact No:</p>
+        <p class="mt-1 text-gray-600 font-['Roboto']">888-999-1466, 888-999-1491, 888-999-1494</p>
+      </div>
+    </div>
+  </div>
+  </footer>
+  </script>
+</body> 
+ 
+</html>

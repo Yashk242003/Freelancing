@@ -1,0 +1,298 @@
+<html>
+ <head>
+  <title>
+   Partner
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  
+
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1 {
+            font-family: 'DM Serif Display', serif; }
+        h3 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+  </style>
+ </head>
+ <body class="bg-white-100">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="w-full h-[89px] px-4 py-4 bg-white shadow flex justify-between items-center">
+        <img class="w-[137px] h-[67px] ml-10" src="./image/Logo.png" alt="Logo">
+      
+        <!-- Hamburger Icon for mobile and tablet -->
+        <div class="lg:hidden flex items-center cursor-pointer" id="hamburger-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </div>
+      
+        <!-- Desktop Menu (visible on large screens) -->
+        <div class="hidden lg:flex items-center gap-10 mr-10">
+          <a href="index.html" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Home</a>
+          <a href="About.html" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">About Us</a>
+          <a href="#indoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+          <a href="#outdoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+          <a href="Decorative.html" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+          <a href="#partner" class="bg-[#c2282d] text-white py-2 px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+        </div>
+      </div>
+      
+      <!-- Sidebar (Mobile and Tablet) -->
+      <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform ease-in-out duration-300 z-50" id="sidebar">
+        <div class="flex justify-end p-4">
+          <button class="text-2xl" id="close-sidebar">×</button>
+        </div>
+        <div class="flex flex-col items-center gap-6 p-4">
+          <a href="index.html" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Home</a>
+          <a href="#about" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">About Us</a>
+          <a href="#indoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+          <a href="#outdoor-lights" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+          <a href="Decorative.html" class="text-[#545454] text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+          <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+        </div>
+      </div>
+      
+      <!-- Overlay for Sidebar -->
+      <div class="fixed inset-0 bg-gray-500 bg-opacity-50 z-40 hidden" id="overlay"></div>
+      
+      <script>
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const sidebar = document.getElementById('sidebar');
+        const closeSidebar = document.getElementById('close-sidebar');
+        const overlay = document.getElementById('overlay');
+      
+        // Show sidebar when hamburger icon is clicked
+        hamburgerIcon.addEventListener('click', () => {
+          sidebar.style.transform = 'translateX(0)';
+          overlay.classList.remove('hidden');
+        });
+      
+        // Hide sidebar when close button or overlay is clicked
+        closeSidebar.addEventListener('click', () => {
+          sidebar.style.transform = 'translateX(100%)';
+          overlay.classList.add('hidden');
+        });
+      
+        overlay.addEventListener('click', () => {
+          sidebar.style.transform = 'translateX(100%)';
+          overlay.classList.add('hidden');
+        });
+      </script>
+      
+      
+  </header>
+  <!-- Main Content -->
+  <main class="container mx-auto mt-8 px-6">
+   <!-- Become a Partner Section -->
+   <div class="flex items-center justify-center min-h-screen">
+    <div class="w-[1226px] h-[734px] relative">
+        <div class="relative w-full h-[441px] bg-cover bg-center rounded-xl" style="background-image: url('./image/11P.png');">
+            <div class="absolute inset-0 bg-[#0e0303]/70 rounded-xl"></div>
+            <div class="absolute left-4 md:left-[11%] top-[20%] w-[90%] md:w-[518px] text-left px-4">
+              <h1 class="text-[#ff5656] text-3xl md:text-4xl font-normal font-['DM Serif Display'] leading-[45px] mb-2">
+                Become a Partner
+            </h1>
+            
+                
+                <div class="text-[#fffbfc] text-lg md:text-xl font-normal font-['Roboto'] leading-[30px] tracking-tight">
+                    Get dedicated support from our expert team to grow your business, including marketing materials, training, and technical assistance.
+                </div>
+            </div>
+        </div>
+    
+        <form action="/submit-partner-form" method="POST" class="w-full sm:w-[915px] sm:h-[423px] mx-auto bg-white rounded-[5px] shadow p-12 absolute top-[78%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- First Name -->
+                <div class="flex flex-col w-full">
+                    <label for="first-name" class="text-[#292c31] text-sm font-normal leading-normal tracking-tight">First Name</label>
+                    <input type="text" id="first-name" name="first_name" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
+                </div>
+    
+                <!-- Last Name -->
+                <div class="flex flex-col w-full">
+                    <label for="last-name" class="text-[#292c31] text-sm font-normal leading-normal tracking-tight">Last Name</label>
+                    <input type="text" id="last-name" name="last_name" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
+                </div>
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                <!-- Email -->
+                <div class="flex flex-col w-full">
+                    <label for="email" class="text-[#292c31] text-sm font-normal leading-normal tracking-tight">Email</label>
+                    <input type="email" id="email" name="email" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
+                </div>
+    
+                <!-- Business Name -->
+                <div class="flex flex-col w-full">
+                    <label for="business-name" class="text-[#292c31] text-sm font-normal leading-normal tracking-tight">Business Name</label>
+                    <input type="text" id="business-name" name="business_name" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
+                </div>
+            </div>
+    
+            <!-- Address -->
+            <div class="flex flex-col w-full mt-6">
+                <label for="address" class="text-[#292c31] text-sm font-normal leading-normal tracking-tight">Address</label>
+                <input type="text" id="address" name="address" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="flex justify-center sm:justify-end mt-[54px]">
+                <button type="submit" class="w-full sm:w-[149px] h-10 bg-[#c2282d] rounded text-center text-white text-sm font-semibold leading-normal tracking-tight">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+    
+  </div>
+  </main>
+
+  <section class="bg-cover bg-center text-white py-12 mt-[131px] md:mt-[131px] h-auto md:h-[413px] relative" style="background-image: url('./image/11P.png');">
+    <!-- Custom color overlay with 80% opacity -->
+    <div class="absolute inset-0 bg-[#C2282D]/80"></div>
+
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center relative px-4 md:px-0 mt-6">
+        <!-- Happy Clients -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s.png" alt="Happy Clients Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">50000+</h2>
+            <p class="text-base md:text-[24px]">Happy Clients</p>
+        </div>
+
+        <!-- Industrial Projects -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s2.png" alt="Industrial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">45+</h2>
+            <p class="text-base md:text-[24px]">Industrial Projects</p>
+        </div>
+
+        <!-- Commercial Projects -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s3.png" alt="Commercial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">100K</h2>
+            <p class="text-base md:text-[24px]">Commercial Projects</p>
+        </div>
+
+        <!-- Residential Projects -->
+        <div class="flex flex-col items-center">
+            <img src="./image/s4.png" alt="Residential Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+            <h2 class="text-[32px] md:text-[48px] font-bold mt-2">1000+</h2>
+            <p class="text-base md:text-[24px]">Residential Projects</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section 
+  class="w-full h-[387px] relative mx-auto mt-[533px]" 
+  style="background-image: url('./image/12P.png'); background-size: cover; background-position: center;">
+  
+  <!-- Overlay Background -->
+  <div class="absolute inset-0 bg-black/70"></div>
+  
+  <!-- Content Wrapper -->
+  <div class="w-full max-w-[1440px] h-auto absolute left-1/2 transform -translate-x-1/2 top-[20%] md:top-[89px] text-center px-6">
+    <!-- Heading -->
+    <h3 class="text-white text-[28px] sm:text-[32px] md:text-[50px] font-regular font-['DM Serif Display'] leading-[36px] sm:leading-[40px] md:leading-[62.5px]">
+      Become A Partner
+    </h3>
+
+    <!-- Subheading -->
+    <p class="text-white text-[16px] sm:text-[18px] md:text-[22px] font-['Jost'] font-medium leading-[24px] sm:leading-[28px] md:leading-[33px] tracking-tight mt-3 sm:mt-4">
+      Join the Trabo LED Lights Family
+    </p>
+
+    <!-- CTA Button -->
+    <a href="#" class="bg-[#c2282d] text-white text-[16px] sm:text-[18px] font-['Roboto'] font-semibold rounded-[18px] shadow mt-5 inline-block flex items-center justify-center w-[180px] h-[55px] sm:w-[200px] sm:h-[65px] md:w-[237px] md:h-[75px] mx-auto">
+      Contact Us
+      <img src="./image/Vector.png" alt="Arrow Icon" class="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+    </a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-8 mt-[111px]">
+    <!-- Container for Footer -->
+<div class="container mx-auto mb-[50px] px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- First Column: Logo and Social Media -->
+      <div>
+        <img alt="Trabo LED Lights Logo" class="h-[67px] w-[137px]" src="./image/Logo.png" />
+        <p class="mt-[18px] text-gray-600 font-['Roboto']">
+          It is a long established fact that a reader will be distracted looking.
+        </p>
+        <div class="flex space-x-4 mt-[18px]">
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a class="text-gray-600 hover:text-red-600" href="#">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Second Column: Pages -->
+      <div>
+        <h3 class="text-[25px] font-regular font-['DM Serif Display']">Pages</h3>
+        <ul class="mt-2 space-y-2">
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Home</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">About us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Third Column: Services -->
+      <div>
+        <h3 class="text-[25px] font-regular font-['DM Serif Display']">Services</h3>
+        <ul class="mt-2 space-y-2">
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Indoor Lights</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Outdoor Lights</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Decorative Lights</a></li>
+          <li><a class="text-gray-600 hover:text-red-600" href="#">Strip Lights</a></li>
+        </ul>
+      </div>
+  
+      <!-- Fourth Column: Contact -->
+      <div>
+        <h3 class="text-[25px] font-regular font-['DM Serif Display']">Contact</h3>
+        <p class="mt-2 text-gray-600 font-['Roboto']">
+          Address: 2nd floor, Above HDFC Bank, Alark Shopping Mall, Lalghat Square, Bhopal (MP)
+        </p>
+        <p class="mt-2 text-gray-600 font-['Roboto']">Email: hellotrabo@gmail.com</p>
+        <p class="mt-2 text-gray-600 font-['Roboto'] font-bold">Contact No:</p>
+        <p class="mt-1 text-gray-600 font-['Roboto']">888-999-1466, 888-999-1491, 888-999-1494</p>
+      </div>
+    </div>
+  </div>
+  
+  </footer>
+ 
+  
+  <script>
+   document.getElementById('menu-button').addEventListener('click', function() {
+        var menu = document.getElementById('mobile-menu');
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+  </script>
+ </body>
+</html>
