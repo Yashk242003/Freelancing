@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decorative Lights</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    h1, h3 {
+      font-family: 'DM Serif Display', serif;
+    }
+  </style>
+</head>
+<body class="bg-white-100">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="w-full h-[89px] px-4 py-4 bg-white shadow flex justify-between items-center">
+      <img class="w-[120px] h-[60px] ml-4 sm:ml-10" src="./image/Logo.png" alt="Logo">
+      <div class="lg:hidden flex items-center cursor-pointer" id="hamburger-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </div>
+      <div class="hidden lg:flex items-center gap-6 mr-4 sm:mr-10">
+        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="About.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50" id="sidebar">
+      <div class="flex justify-end p-4">
+        <button class="text-2xl" id="close-sidebar">×</button>
+      </div>
+      <nav class="flex flex-col items-center gap-6 p-4">
+        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="#about" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="#partner" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+      </nav>
+    </div>
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-50 z-40 hidden" id="overlay"></div>
+    <script>
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const sidebar = document.getElementById('sidebar');
+      const closeSidebar = document.getElementById('close-sidebar');
+      const overlay = document.getElementById('overlay');
+
+      hamburgerIcon.addEventListener('click', () => {
+        sidebar.style.transform = 'translateX(0)';
+        overlay.classList.remove('hidden');
+      });
+
+      closeSidebar.addEventListener('click', () => {
+        sidebar.style.transform = 'translateX(100%)';
+        overlay.classList.add('hidden');
+      });
+
+      overlay.addEventListener('click', () => {
+        sidebar.style.transform = 'translateX(100%)';
+        overlay.classList.add('hidden');
+      });
+    </script>
+  </header>
+
+  <section 
+  class="w-full max-w-[90%] sm:max-w-[1024px] md:max-w-[1226px] h-[300px] sm:h-[400px] md:h-[441px] relative mx-auto mt-[60px] rounded-xl transition-all duration-1000" 
+  id="carouselSection"
+  style="background-image: url('./image/1.png'); background-size: cover; background-position: center;">
+  
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/40 rounded-xl"></div>
+  
+  <!-- Pagination/Navigation dots -->
+  <div id="pagination" class="absolute left-1/2 bottom-[10px] sm:bottom-[20px] transform -translate-x-1/2 flex gap-2 sm:gap-3.5 items-center">
+    <div class="w-3 h-3 sm:w-4 sm:h-4 bg-[#c2282d] rounded-full"></div>
+    <div class="w-3 h-3 sm:w-4 sm:h-4 bg-[#d9d9d9] rounded-full"></div>
+    <div class="w-3 h-3 sm:w-4 sm:h-4 bg-[#d9d9d9] rounded-full"></div>
+  </div>
+
+  <!-- Heading -->
+  <h1 class="absolute left-1/2 top-[25%] sm:top-[30%] md:top-[30%] transform -translate-x-1/2 text-center text-white text-[24px] sm:text-[32px] md:text-[48px] font-regular font-['DM Serif Display'] leading-[30px] sm:leading-[40px] md:leading-[60px] px-4" 
+  style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+    Brighten Your World with <br />Innovative LED Lighting
+  </h1>
+
+</section>
+
+<script>
+  const images = [
+    './image/1.png',
+    './image/2.png',
+    './image/3.png'
+  ];
+
+  let currentIndex = 0;
+  const carouselSection = document.getElementById('carouselSection');
+  const pagination = document.getElementById('pagination').children;
+
+  function changeImage() {
+    // Update background image
+    carouselSection.style.backgroundImage = `url(${images[currentIndex]})`;
+
+    // Update pagination dots
+    for (let i = 0; i < pagination.length; i++) {
+      if (i === currentIndex) {
+        pagination[i].classList.add('bg-[#c2282d]');
+        pagination[i].classList.remove('bg-[#d9d9d9]');
+      } else {
+        pagination[i].classList.remove('bg-[#c2282d]');
+        pagination[i].classList.add('bg-[#d9d9d9]');
+      }
+    }
+
+    // Update index for next cycle
+    currentIndex = (currentIndex + 1) % images.length;
+  }
+
+  // Change image every 3 seconds
+  setInterval(changeImage, 3000);
+
+  // Initial image load
+  changeImage();
+</script>
+
+<section class="w-full max-w-[1227px] h-auto flex flex-col justify-center items-center px-4 mx-auto mt-[51px]">
+    <div class="flex flex-col items-center justify-start gap-2 sm:gap-4 px-4">
+      <!-- Header -->
+      <h1 class="text-center text-[#c2282d] text-[24px] sm:text-[32px] md:text-[40px] font-regular font-['DM Serif Display'] tracking-wide leading-tight">
+        Our Trending Product
+      </h1>
+  
+      <p class="text-center text-[#292c31] text-xs sm:text-sm md:text-base font-normal font-['Roboto'] leading-relaxed">
+        Powering Homes and Businesses with Innovation and Efficiency
+      </p>
+    </div>      
+  
+    <!-- Scrollable Product Cards -->
+    <div class="w-full h-auto overflow-x-auto mt-4">
+      <div class="flex gap-4 sm:gap-6 overflow-x-auto pb-4 flex-wrap justify-center">
+        <!-- Product Item Template -->
+        <div class="product-card">
+          <div class="w-full text-center">
+            <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
+            <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
+          </div>
+          <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/k1.png" alt="RIMLESS DOWNLIGHT" />
+        </div>
+  
+        <!-- Repeat Product Item with different text and images -->
+        <div class="product-card">
+          <div class="w-full text-center">
+            <div class="text-black text-lg sm:text-xl font-bold">DELTA</div>
+            <div class="text-black text-xs sm:text-sm">COB</div>
+          </div>
+          <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/Delta 1.png" alt="DELTA COB" />
+        </div>
+  
+        <div class="product-card">
+          <div class="w-full text-center">
+            <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
+            <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
+          </div>
+          <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/Delta 1.png" alt="RIMLESS DOWNLIGHT" />
+        </div>
+  
+        <div class="product-card">
+          <div class="w-full text-center">
+            <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
+            <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
+          </div>
+          <img class="w-full h-[120px] sm:h-[135px] object-contain" src="./image/k1.png" alt="RIMLESS DOWNLIGHT" />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .product-card {
+      width: 220px;
+      height: 300px;
+      background: #fefefe;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 24px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s ease;
+    }
+  
+    /* Hover effect for product cards */
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 640px) {
+      .product-card {
+        flex: 0 0 calc(50% - 16px); /* Show two cards per row */
+        max-width: calc(50% - 16px);
+      }
+  
+      .flex {
+        flex-wrap: wrap; /* Wrap cards to new rows if necessary */
+      }
+  
+      /* Make sure text in cards looks appropriate on mobile */
+      .text-lg {
+        font-size: 16px; /* Adjust text size */
+      }
+  
+      .text-xs {
+        font-size: 12px; /* Adjust text size */
+      }
+    }
+  
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .product-card {
+        flex: 0 0 calc(33.33% - 16px); /* Show three cards per row */
+        max-width: calc(33.33% - 16px);
+      }
+    }
+  
+    @media (min-width: 1025px) {
+      .product-card {
+        flex: 0 0 calc(25% - 16px); /* Show four cards per row on larger screens */
+        max-width: calc(25% - 16px);
+      }
+    }
+  </style>
+
+ <section class="bg-cover bg-center text-white py-12 mt-[58px] md:mt-[131px] h-auto md:h-[413px] relative" style="background-image: url('./image/11P.png');">
+    <!-- Custom color overlay with 80% opacity -->
+    <div class="absolute inset-0 bg-[#C2282D]/80"></div>
+  
+    <!-- Container for content, adjusted for responsiveness -->
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center relative px-4 md:px-0 my-auto">
+      <!-- Happy Clients -->
+      <div class="flex flex-col items-center">
+        <img src="./image/s.png" alt="Happy Clients Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">50000+</h2>
+        <p class="text-base md:text-[24px]">Happy Clients</p>
+      </div>
+  
+      <!-- Industrial Projects -->
+      <div class="flex flex-col items-center">
+        <img src="./image/s2.png" alt="Industrial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">45+</h2>
+        <p class="text-base md:text-[24px]">Industrial Projects</p>
+      </div>
+  
+      <!-- Commercial Projects -->
+      <div class="flex flex-col items-center">
+        <img src="./image/s3.png" alt="Commercial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">100K</h2>
+        <p class="text-base md:text-[24px]">Commercial Projects</p>
+      </div>
+  
+      <!-- Residential Projects -->
+      <div class="flex flex-col items-center">
+        <img src="./image/s4.png" alt="Residential Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
+        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">1000+</h2>
+        <p class="text-base md:text-[24px]">Residential Projects</p>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    /* Mobile-first styling */
+    .container {
+      padding: 0 16px;
+    }
+  
+    /* Mobile Layout */
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr; /* One column on mobile */
+        gap: 16px;
+      }
+  
+      .grid .flex img {
+        width: 100px; /* Icon size for mobile */
+        height: 100px;
+      }
+  
+      .grid .flex h2 {
+        font-size: 32px;
+      }
+  
+      .grid .flex p {
+        font-size: 20px;
+      }
+    }
+  
+    /* Tablet Layout */
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
+        gap: 16px;
+      }
+  
+      .grid .flex img {
+        width: 100px;
+        height: 100px;
+      }
+  
+      .grid .flex h2 {
+        font-size: 40px;
+      }
+  
+      .grid .flex p {
+        font-size: 22px;
+      }
+    }
+  
+    /* Desktop & Laptop Layout (MacBook/Notebook) */
+    @media (min-width: 1025px) and (max-width: 1440px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
+        gap: 24px;
+      }
+  
+      .grid .flex img {
+        width: 120px;
+        height: 120px;
+      }
+  
+      .grid .flex h2 {
+        font-size: 48px;
+      }
+  
+      .grid .flex p {
+        font-size: 24px;
+      }
+    }
+  
+    /* Larger Desktop Layout */
+    @media (min-width: 1441px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+        gap: 24px;
+      }
+  
+      .grid .flex img {
+        width: 120px;
+        height: 120px;
+      }
+  
+      .grid .flex h2 {
+        font-size: 48px;
+      }
+  
+      .grid .flex p {
+        font-size: 24px;
+      }
+    }
+  </style>
+  
+  
+  <section class="w-full max-w-[1257px] h-auto relative mx-auto px-4 sm:px-0 mt-[178px]">
+    <!-- Text Section -->
+    <div class="w-full max-w-[737px] mx-auto mt-4 sm:mt-0 px-4">
+      <h1 class="text-center text-[#c2282d] text-[24px] sm:text-[28px] md:text-[36px] font-regular font-['DM Serif Display'] tracking-wide leading-tight">
+        Brand Who Trust Us
+      </h1>    
+      <div class="text-center text-[#4d4f52] text-[14px] sm:text-[16px] md:text-base lg:text-lg font-normal font-['Roboto'] leading-normal tracking-tight mt-2 sm:mt-4">
+        Leading Brands and Homes Trust Trabo to Light Up Their Spaces with Quality and Efficiency
+      </div>
+    </div>
+  
+    <!-- Image Section -->
+    <div class="flex flex-wrap justify-center sm:justify-start items-center gap-6 sm:gap-[19px] mt-4 sm:mt-[81px]">
+      <!-- Image Block 1 -->
+      <div class="w-full sm:w-[250px] md:w-[300px] h-[80px] sm:h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/Dom.png" alt="Dom logo" />
+      </div>
+  
+      <!-- Image Block 2 -->
+      <div class="w-full sm:w-[250px] md:w-[300px] h-[80px] sm:h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/netlink.png" alt="Netlink logo" />
+      </div>
+  
+      <!-- Image Block 3 -->
+      <div class="w-full sm:w-[250px] md:w-[300px] h-[80px] sm:h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/oport.png" alt="Oport logo" />
+      </div>
+  
+      <!-- Image Block 4 -->
+      <div class="w-full sm:w-[250px] md:w-[300px] h-[80px] sm:h-[100px] relative">
+        <div class="w-full h-full bg-[#ffffff]"></div>
+        <img class="w-full h-full object-contain absolute left-0 top-0" src="./image/LNCT.png" alt="LNCT logo" />
+      </div>
+    </div>
+  </section>
+  
+  
+<section 
+  class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] relative mx-auto mt-[533px]" 
+  style="background-image: url('./image/12P.png'); background-size: cover; background-position: center;">
+  
+  <!-- Overlay Background -->
+  <div class="absolute inset-0 bg-black/70"></div>
+  
+  <!-- Content Wrapper -->
+  <div class="w-full max-w-[90%] sm:max-w-[720px] md:max-w-[900px] lg:max-w-[1080px] h-auto absolute left-1/2 transform -translate-x-1/2 top-[12%] sm:top-[20%] lg:top-[25%] text-center px-4 sm:px-6">
+    <!-- Heading -->
+    <h3 class="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[50px] font-regular font-['DM Serif Display'] leading-[28px] sm:leading-[36px] md:leading-[50px] lg:leading-[62px]">
+      Become A Partner
+    </h3>
+
+    <!-- Subheading -->
+    <p class="text-white text-[14px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-['Jost'] font-medium leading-[20px] sm:leading-[28px] md:leading-[30px] lg:leading-[33px] tracking-tight mt-2 sm:mt-4">
+      Join the Trabo LED Lights Family
+    </p>
+
+    <!-- CTA Button -->
+    <a href="#" 
+       class="bg-[#c2282d] text-white text-[14px] sm:text-[16px] md:text-[18px] lg:text-[18px] font-['Roboto'] font-semibold rounded-[18px] shadow mt-4 sm:mt-5 inline-block flex items-center justify-center w-[140px] sm:w-[180px] md:w-[200px] lg:w-[237px] h-[40px] sm:h-[50px] md:h-[60px] lg:h-[75px] mx-auto">
+      Contact Us
+      <img src="./image/Vector.png" alt="Arrow Icon" class="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 ml-2" />
+    </a>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-white py-8">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div>
+          <img alt="Trabo LED Lights Logo" class="h-[50px] w-auto" src="./image/Logo.png" />
+          <p class="mt-4 text-gray-600 text-sm sm:text-base">
+            It is a long established fact that a reader will be distracted looking.
+          </p>
+          <div class="flex space-x-4 mt-4">
+            <a class="text-gray-600 hover:text-red-600" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-gray-600 hover:text-red-600" href="#"><i class="fab fa-twitter"></i></a>
+            <a class="text-gray-600 hover:text-red-600" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="text-gray-600 hover:text-red-600" href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg sm:text-xl">Pages</h3>
+          <ul class="mt-2 space-y-2">
+            <li><a class="text-gray-600 hover:text-red-600 text-sm sm:text-base" href="#">Home</a></li>
+            <li><a class="text-gray-600 hover:text-red-600 text-sm sm:text-base" href="#">About us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg sm:text-xl">Services</h3>
+          <ul class="mt-2 space-y-2">
+            <li><a class="text-gray-600 hover:text-red-600 text-sm sm:text-base" href="#">Indoor Lights</a></li>
+            <li><a class="text-gray-600 hover:text-red-600 text-sm sm:text-base" href="#">Outdoor Lights</a></li>
+            <li><a class="text-gray-600 hover:text-red-600 text-sm sm:text-base" href="#">Decorative Lights</a></li>
+            <li><a class="text-gray-600 hover:text-red-600 text-sm sm:text-base" href="#">Strip Lights</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg sm:text-xl">Contact</h3>
+          <p class="mt-2 text-gray-600 text-sm sm:text-base">
+            Address: 2nd floor, Above HDFC Bank, Alark Shopping Mall, Lalghat Square, Bhopal (MP)
+          </p>
+          <p class="mt-2 text-gray-600 text-sm sm:text-base">Email: hellotrabo@gmail.com</p>
+          <p class="mt-2 text-gray-600 font-bold text-sm sm:text-base">Contact No:</p>
+          <p class="mt-1 text-gray-600 text-sm sm:text-base">888-999-1466, 888-999-1491, 888-999-1494</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
