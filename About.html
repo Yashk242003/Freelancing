@@ -23,72 +23,61 @@
   </style>
  </head>
  <body class="bg-white-100">
-  <!-- Header -->
   <header class="bg-white shadow-md">
-    <div class="w-full h-[72px] px-4 flex justify-between items-center">
-      <!-- Logo -->
-      <img class="w-[100px] h-auto ml-4" src="./image/Logo.png" alt="Logo" />
-  
-      <!-- Hamburger Icon for mobile -->
+    <div class="w-full h-[89px] px-4 py-4 bg-white shadow flex justify-between items-center">
+      <img class="w-[120px] h-[60px] ml-4 sm:ml-10" src="./image/Logo.png" alt="Logo">
       <div class="lg:hidden flex items-center cursor-pointer" id="hamburger-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </div>
-  
-      <!-- Desktop Menu -->
-      <nav class="hidden lg:flex items-center gap-6 mr-6">
-        <a href="#" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Home</a>
-        <a href="index.html" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">About Us</a>
-        <a href="#indoor-lights" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Indoor Lights</a>
-        <a href="#outdoor-lights" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Outdoor Lights</a>
-        <a href="Decorative.html" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Decorative Lights</a>
-        <a href="Partner.html" class="bg-[#c2282d] text-white text-sm py-2 px-4 rounded hover:bg-[#a31d26]">Become Partner</a>
+      <div class="hidden lg:flex items-center gap-6 mr-4 sm:mr-10">
+        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="About.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50" id="sidebar">
+      <div class="flex justify-end p-4">
+        <button class="text-2xl" id="close-sidebar">×</button>
+      </div>
+      <nav class="flex flex-col items-center gap-6 p-4">
+        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="#about" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="#partner" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
       </nav>
     </div>
-  
-    <!-- Mobile Sidebar -->
-    <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform ease-in-out duration-300 z-50" id="sidebar">
-      <div class="flex justify-end p-4">
-        <button class="text-2xl text-gray-700" id="close-sidebar">×</button>
-      </div>
-      <div class="flex flex-col items-center gap-6 p-4">
-        <a href="#" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Home</a>
-        <a href="index.html" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">About Us</a>
-        <a href="#indoor-lights" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Indoor Lights</a>
-        <a href="#outdoor-lights" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Outdoor Lights</a>
-        <a href="Decorative.html" class="text-[#545454] text-sm font-medium hover:text-[#c2282d]">Decorative Lights</a>
-        <a href="Partner.html" class="bg-[#c2282d] text-white text-sm py-2 px-4 rounded hover:bg-[#a31d26]">Become Partner</a>
-      </div>
-    </div>
-  
-    <!-- Overlay for Sidebar -->
     <div class="fixed inset-0 bg-gray-500 bg-opacity-50 z-40 hidden" id="overlay"></div>
-  
     <script>
       const hamburgerIcon = document.getElementById('hamburger-icon');
       const sidebar = document.getElementById('sidebar');
       const closeSidebar = document.getElementById('close-sidebar');
       const overlay = document.getElementById('overlay');
-  
-      // Show sidebar when hamburger icon is clicked
+
       hamburgerIcon.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(0)';
         overlay.classList.remove('hidden');
       });
-  
-      // Hide sidebar when close button or overlay is clicked
+
       closeSidebar.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(100%)';
         overlay.classList.add('hidden');
       });
-  
+
       overlay.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(100%)';
         overlay.classList.add('hidden');
       });
     </script>
   </header>
+
   
 
   <section 
