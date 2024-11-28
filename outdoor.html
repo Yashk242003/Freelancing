@@ -28,11 +28,11 @@
         </svg>
       </div>
       <div class="hidden lg:flex items-center gap-6 mr-4 sm:mr-10">
-        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
-        <a href="About.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
-        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
-        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
-        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="index.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="about.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="indoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="outdoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="decorative.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
         <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
       </div>
     </div>
@@ -42,12 +42,12 @@
         <button class="text-2xl" id="close-sidebar">×</button>
       </div>
       <nav class="flex flex-col items-center gap-6 p-4">
-        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
-        <a href="#about" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
-        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
-        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
-        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
-        <a href="#partner" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+        <a href="index.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="about.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="indoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="outdoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="decorative.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
       </nav>
     </div>
     <div class="fixed inset-0 bg-gray-500 bg-opacity-50 z-40 hidden" id="overlay"></div>
@@ -56,304 +56,144 @@
       const sidebar = document.getElementById('sidebar');
       const closeSidebar = document.getElementById('close-sidebar');
       const overlay = document.getElementById('overlay');
-
+      const body = document.body;
+  
+      // Show sidebar and disable scrolling
       hamburgerIcon.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(0)';
         overlay.classList.remove('hidden');
+        body.classList.add('overflow-hidden'); // Prevent scrolling
       });
-
+  
+      // Hide sidebar and enable scrolling
       closeSidebar.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(100%)';
         overlay.classList.add('hidden');
+        body.classList.remove('overflow-hidden'); // Restore scrolling
       });
-
+  
       overlay.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(100%)';
         overlay.classList.add('hidden');
+        body.classList.remove('overflow-hidden'); // Restore scrolling
       });
     </script>
   </header>
-
-<section 
-  class="w-full max-w-[90%] sm:max-w-[95%] md:max-w-[1226px] h-[400px] sm:h-[441px] relative mx-auto mt-[40px] sm:mt-[50px] md:mt-[60px] rounded-xl" 
-  id="imageSection" 
-  style="background-size: cover; background-position: center; transition: background-image 1s ease-in-out;">
-  <!-- Overlay -->
-  <div class="absolute w-full h-full bg-[#0e0303]/70 rounded-xl"></div>
   
-  <!-- Pagination/Navigation Dots -->
-  <div class="absolute left-1/2 bottom-[16px] sm:bottom-[20px] transform -translate-x-1/2 flex gap-2 sm:gap-3 items-center" id="pagination">
-    <div class="w-3 h-3 sm:w-4 sm:h-4 bg-[#c2282d] rounded-full"></div>
-    <div class="w-3 h-3 sm:w-4 sm:h-4 bg-[#d9d9d9] rounded-full"></div>
-    <div class="w-3 h-3 sm:w-4 sm:h-4 bg-[#d9d9d9] rounded-full"></div>
-  </div>
+  <!-- Add this CSS -->
+  <style>
+    /* Prevent scrolling when overflow-hidden is added to body */
+    body.overflow-hidden {
+      overflow: hidden;
+    }
+  </style>
   
-  <!-- Content -->
-  <div class="absolute top-[15%] sm:top-[20%] left-1/2 transform -translate-x-1/2 w-[90%] sm:w-[80%] md:w-[827px] text-center text-white px-4 sm:px-0">
-    <h1 class="text-[20px] sm:text-[36px] md:text-[50px] font-normal font-['DM Serif Display'] leading-[28px] sm:leading-[46px] md:leading-[62.5px]">
-      About Trabo
-    </h1>
-    <p class="text-sm sm:text-base md:text-lg font-normal font-['Roboto'] leading-[20px] sm:leading-[28px] md:leading-[35px] tracking-tight mt-3 sm:mt-4">
-      Our lighting solutions are designed to be more than just a replacement for conventional lighting. With an unprecedented lifespan and the highest efficacy of any commercial technology, TRABO lighting will take you beyond conventional lighting and into a world of unparalleled beauty and elegance.
-    </p>
-  </div>
-</section>
-
-<script>
-  const images = [
-    'image.png',
-    './image/image2.png',
-    './image/image3.png'
-  ];
-  let currentImageIndex = 0;
-
-  const section = document.getElementById('imageSection');
-  const pagination = document.getElementById('pagination').children;
-
-  function changeImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    section.style.backgroundImage = `url('${images[currentImageIndex]}')`;
-
-    // Update pagination dots
-    Array.from(pagination).forEach((dot, index) => {
-      dot.classList.toggle('bg-[#c2282d]', index === currentImageIndex);
-      dot.classList.toggle('bg-[#d9d9d9]', index !== currentImageIndex);
-    });
-  }
-
-  // Start auto image change every 3 seconds
-  setInterval(changeImage, 3000);
-
-  // Initial setup to set the first image
-  changeImage();
-</script>
-
-<section class="w-full max-w-[90%] lg:max-w-[1217px] relative mx-auto mt-[40px] sm:mt-[50px] lg:mt-[70px] px-4 sm:px-0">
-  <div class="w-full h-auto bg-white rounded-lg shadow mx-auto relative">
-    <!-- Title -->
-    <h1 class="text-[#c2282d] text-[20px] sm:text-[24px] lg:text-[36px] font-regular font-['DM Serif Display'] leading-[28px] sm:leading-[32px] lg:leading-[45px] mt-[20px] sm:mt-[30px] lg:mt-[61px] text-center lg:text-left lg:ml-[63px]">
-      Trabo LED Light
-    </h1>
-
-    <!-- Content Text -->
-    <div class="text-[#545454] text-sm sm:text-base lg:text-[20px] font-normal font-['Roboto'] leading-[20px] sm:leading-[25px] lg:leading-[35px] tracking-tight mt-4 sm:mt-6 lg:mt-0 lg:absolute lg:top-[151px] lg:left-[65px] lg:w-[657px] px-2 sm:px-4 lg:px-0 text-justify">
-      TRABO illuminates your world with state-of-the-art lighting solutions that will transform your living spaces like never before. As a leading provider of LED strip lights, we offer an extensive range of products at highly competitive prices without compromising on quality.
-      <br /><br />
-      Our human-centric approach to lighting merges cutting-edge aesthetics with technological and electronic expertise, making us a proud Indian brand that can elevate your lifestyle and bring a touch of sophistication to your decor.
-      <br /><br />
-      Our lighting solutions are designed to be more than just a replacement for conventional lighting. With an unprecedented lifespan and the highest efficacy of any commercial technology, TRABO lighting will take you beyond conventional lighting and into a world of unparalleled beauty and elegance.
+ 
+  <section class="w-full max-w-[1226px] h-auto relative mx-auto mt-[60px] flex flex-col lg:flex-row gap-[20px]">
+    <!-- Left Section (Menu) -->
+    <div class="w-full lg:w-[305px] mt-[60px] lg:mt-0">
+      <!-- Left Section (Navigation) -->
+      <section class="w-full h-auto">
+        <div class="w-full h-11 bg-[#c2282d] rounded flex justify-center items-center text-white text-base font-['Roboto']">
+          Decorative Lights
+        </div>
+        <div class="w-full h-11 bg-[#545454] rounded mt-4 flex justify-center items-center text-white text-base font-['Roboto']">
+          Indoor Lights
+        </div>
+        <div class="w-full h-11 bg-[#545454] rounded mt-4 flex justify-center items-center text-white text-base font-['Roboto']">
+          Outdoor Lights
+        </div>
+        <div class="w-full h-11 bg-[#545454] rounded mt-4 flex justify-center items-center text-white text-base font-['Roboto']">
+          Streep Lights
+        </div>
+      </section>
     </div>
-
-    <!-- Image -->
-    <img
-      class="w-[250px] sm:w-[300px] lg:w-[500px] h-auto mx-auto mt-4 sm:mt-6 lg:mt-0 lg:absolute lg:left-[720px] lg:top-[188px]"
-      src="Sigma 1.png"
-      alt="Trabo LED Light"
-    />
-  </div>
-</section>
-
- <section class="bg-cover bg-center text-white py-12 mt-[58px] md:mt-[131px] h-auto md:h-[413px] relative" style="background-image: url('./image/11P.png');">
-    <!-- Custom color overlay with 80% opacity -->
-    <div class="absolute inset-0 bg-[#C2282D]/80"></div>
-  
-    <!-- Container for content, adjusted for responsiveness -->
-    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center relative px-4 md:px-0 my-auto">
-      <!-- Happy Clients -->
-      <div class="flex flex-col items-center">
-        <img src="./image/s.png" alt="Happy Clients Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">50000+</h2>
-        <p class="text-base md:text-[24px]">Happy Clients</p>
+    
+    <!-- Right Section (Cards) -->
+    <div class="w-full  lg:w-[913px] mt-[20px] lg:mt-0">
+      <!-- Title Section -->
+      <div class="w-[143px] h-[19px] text-center text-[#545454] text-base font-['Roboto'] mt-[0px]">
+        Decorative Lights
       </div>
-  
-      <!-- Industrial Projects -->
-      <div class="flex flex-col items-center">
-        <img src="./image/s2.png" alt="Industrial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">45+</h2>
-        <p class="text-base md:text-[24px]">Industrial Projects</p>
-      </div>
-  
-      <!-- Commercial Projects -->
-      <div class="flex flex-col items-center">
-        <img src="./image/s3.png" alt="Commercial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">100K</h2>
-        <p class="text-base md:text-[24px]">Commercial Projects</p>
-      </div>
-  
-      <!-- Residential Projects -->
-      <div class="flex flex-col items-center">
-        <img src="./image/s4.png" alt="Residential Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">1000+</h2>
-        <p class="text-base md:text-[24px]">Residential Projects</p>
+      
+      <div class="w-full mt-[18px] grid grid-cols-1 gap-[20px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Repeat Card 2-9 with the same structure -->
+        <!-- Card 2 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Card 7 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Card 8 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
+        
+        <!-- Card 9 -->
+        <div class="w-full lg:w-[285px] h-[323px] bg-[#fefefe] rounded-xl shadow">
+          <div class="text-black text-xl font-bold font-['Roboto'] mt-[20px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <div class="text-black text-[16px] font-regular font-['Roboto'] mt-[1px] ml-[20px]">RIMLESS DOWNLIGHT</div>
+          <img class="w-full h-[135px] object-cover mt-[20px]" src="https://via.placeholder.com/273x135" />
+        </div>
       </div>
     </div>
   </section>
   
-  <style>
-    /* Mobile-first styling */
-    .container {
-      padding: 0 16px;
-    }
   
-    /* Mobile Layout */
-    @media (max-width: 640px) {
-      .grid {
-        grid-template-columns: 1fr; /* One column on mobile */
-        gap: 16px;
-      }
   
-      .grid .flex img {
-        width: 100px; /* Icon size for mobile */
-        height: 100px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 32px;
-      }
-  
-      .grid .flex p {
-        font-size: 20px;
-      }
-    }
-  
-    /* Tablet Layout */
-    @media (min-width: 641px) and (max-width: 1024px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
-        gap: 16px;
-      }
-  
-      .grid .flex img {
-        width: 100px;
-        height: 100px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 40px;
-      }
-  
-      .grid .flex p {
-        font-size: 22px;
-      }
-    }
-  
-    /* Desktop & Laptop Layout (MacBook/Notebook) */
-    @media (min-width: 1025px) and (max-width: 1440px) {
-      .grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
-        gap: 24px;
-      }
-  
-      .grid .flex img {
-        width: 120px;
-        height: 120px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 48px;
-      }
-  
-      .grid .flex p {
-        font-size: 24px;
-      }
-    }
-  
-    /* Larger Desktop Layout */
-    @media (min-width: 1441px) {
-      .grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
-        gap: 24px;
-      }
-  
-      .grid .flex img {
-        width: 120px;
-        height: 120px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 48px;
-      }
-  
-      .grid .flex p {
-        font-size: 24px;
-      }
-    }
-  </style>
-
-<section class="w-full max-w-[90%] lg:max-w-[1231px] relative mx-auto mt-[40px] sm:mt-[100px] px-4 sm:px-0">
-  <!-- Vision Section -->
-  <div class="flex flex-col-reverse sm:flex-row items-center w-full h-auto sm:h-[353px]">
-    <div class="w-full sm:w-[555px] text-center sm:text-left">
-      <h1 class="text-[#c2282d] text-[18px] sm:text-[24px] lg:text-[36px] font-regular font-['DM Serif Display'] leading-[26px] sm:leading-[32px] lg:leading-[45px] mt-4 sm:mt-0">
-        Our Vision
-      </h1>
-      <p class="text-[#545454] text-[14px] sm:text-base lg:text-[20px] font-regular font-['Roboto'] leading-5 sm:leading-6 lg:leading-[35px] mt-4">
-        Our vision is to help our customers reduce their carbon footprint while enjoying healthy, safe, and sustainable lighting solutions that promote energy savings. We strive to achieve this through ethical business practices, global reach, technological expertise, and building long-term relationships with all our associates, customers, partners, and employees.
-      </p>
-    </div>
-    <img
-      class="w-full sm:w-[300px] md:w-[400px] lg:w-[600px] h-auto mb-6 sm:mb-0 ml-0 sm:ml-6"
-      src="Group 1272629038.png"
-      alt="Vision Image"
-    />
-  </div>
-
-  <!-- Mission Section -->
-  <div class="flex flex-col sm:flex-row items-center w-full h-auto sm:h-[353px] mt-8 sm:mt-10">
-    <img
-      class="w-full sm:w-[300px] md:w-[400px] lg:w-[596px] h-auto mb-6 sm:mb-0"
-      src="image 5.png"
-      alt="Mission Image"
-    />
-    <div class="w-full sm:w-[600px] text-center sm:text-left sm:ml-6">
-      <h1 class="text-[#c2282d] text-[18px] sm:text-[24px] lg:text-[36px] font-regular font-['DM Serif Display'] leading-[26px] sm:leading-[32px] lg:leading-[45px]">
-        Mission
-      </h1>
-      <p class="text-[#545454] text-[14px] sm:text-base lg:text-xl font-normal font-['Roboto'] leading-5 sm:leading-6 lg:leading-[35px] mt-4">
-        At TRABO, we are committed to delivering exceptional customer delight and pursuing excellence by constantly improving ourselves, our teams, our services, and our products. Join us on our journey to a brighter and more beautiful world.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section 
-  class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] relative mx-auto mt-[533px]" 
-  style="background-image: url('12P.png'); background-size: cover; background-position: center;">
-  
-  <!-- Overlay Background -->
-  <div class="absolute inset-0 bg-black/70"></div>
-  
-  <!-- Content Wrapper -->
-  <div class="w-full max-w-[90%] sm:max-w-[720px] md:max-w-[900px] lg:max-w-[1080px] h-auto absolute left-1/2 transform -translate-x-1/2 top-[12%] sm:top-[20%] lg:top-[25%] text-center px-4 sm:px-6">
-    <!-- Heading -->
-    <h3 class="text-white text-[20px] sm:text-[28px] md:text-[36px] lg:text-[50px] font-regular font-['DM Serif Display'] leading-[28px] sm:leading-[36px] md:leading-[50px] lg:leading-[62px]">
-      Become A Partner
-    </h3>
-
-    <!-- Subheading -->
-    <p class="text-white text-[14px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-['Jost'] font-medium leading-[20px] sm:leading-[28px] md:leading-[30px] lg:leading-[33px] tracking-tight mt-2 sm:mt-4">
-      Join the Trabo LED Lights Family
-    </p>
-
-    <!-- CTA Button -->
-    <a href="#" 
-       class="bg-[#c2282d] text-white text-[14px] sm:text-[16px] md:text-[18px] lg:text-[18px] font-['Roboto'] font-semibold rounded-[18px] shadow mt-4 sm:mt-5 inline-block flex items-center justify-center w-[140px] sm:w-[180px] md:w-[200px] lg:w-[237px] h-[40px] sm:h-[50px] md:h-[60px] lg:h-[75px] mx-auto">
-      Contact Us
-      <img src="Vector.png" alt="Arrow Icon" class="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 ml-2" />
-    </a>
-  </div>
-</section>
-
-
-
   
 
   <!-- Footer -->
-  <footer class="bg-white py-8">
+  <footer class="bg-white py-8 mt-[350px]">
     <div class="container mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div>
-          <img alt="Trabo LED Lights Logo" class="h-[50px] w-auto" src="Logo.png" />
+          <img alt="Trabo LED Lights Logo" class="h-[50px] w-auto" src="./image/Logo.png" />
           <p class="mt-4 text-gray-600 text-sm sm:text-base">
             It is a long established fact that a reader will be distracted looking.
           </p>
@@ -383,7 +223,7 @@
         <div>
           <h3 class="text-lg sm:text-xl">Contact</h3>
           <p class="mt-2 text-gray-600 text-sm sm:text-base">
-            Address: 2nd floor, Above HDFC Bank, Alark Shopping Mall, Lalghat Square, Bhopal (MP)
+            Address: 2nd floor, Above HDFC Bank, Alark Shopping Mall, Lalghati Square, Bhopal (MP)
           </p>
           <p class="mt-2 text-gray-600 text-sm sm:text-base">Email: hellotrabo@gmail.com</p>
           <p class="mt-2 text-gray-600 font-bold text-sm sm:text-base">Contact No:</p>
