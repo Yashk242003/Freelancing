@@ -88,7 +88,66 @@
     }
   </style>
   
+  <section 
+  class="w-full max-w-[90%] md:max-w-[1226px] relative mx-auto mt-[40px] md:mt-[60px] rounded-xl aspect-[16/9] md:h-[441px]" 
+  id="imageSection" 
+  style="background-size: cover; background-position: center; transition: background-image 1s ease-in-out;">
+  <!-- Overlay -->
+  <div class="absolute w-full h-full bg-[#0e0303]/70 rounded-xl"></div>
   
+  <!-- Pagination/Navigation Dots -->
+  <div class="absolute left-1/2 bottom-[16px] md:bottom-[20px] transform -translate-x-1/2 flex gap-3.5 items-center" id="pagination">
+    <div class="w-3 h-3 md:w-4 md:h-4 bg-[#c2282d] rounded-full"></div>
+    <div class="w-3 h-3 md:w-4 md:h-4 bg-[#d9d9d9] rounded-full"></div>
+    <div class="w-3 h-3 md:w-4 md:h-4 bg-[#d9d9d9] rounded-full"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="absolute top-[20%] sm:top-[25%] left-1/2 transform -translate-x-1/2 w-[90%] sm:w-[80%] md:w-[827px] text-center text-white px-4 sm:px-0">
+    <h1 class="text-[clamp(20px,3vw,50px)] font-normal font-['DM Serif Display'] leading-[clamp(28px,4vw,62.5px)]">
+      About Trabo
+    </h1>
+    <p class="text-[clamp(14px,2.5vw,18px)] font-normal font-['Roboto'] leading-[clamp(20px,3vw,35px)] tracking-tight mt-4">
+      Our lighting solutions are designed to be more than just a replacement for conventional lighting. With an unprecedented lifespan and the highest efficacy of any commercial technology, TRABO lighting will take you beyond conventional lighting and into a world of unparalleled beauty and elegance.
+    </p>
+  </div>
+  
+</section>
+
+<script>
+  const images = [
+    './image/image.png',
+    './image/image2.png',
+    './image/image3.png'
+  ];
+  let currentImageIndex = 0;
+
+  const section = document.getElementById('imageSection');
+  const pagination = document.getElementById('pagination').children;
+
+  function changeImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    section.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+
+    // Update pagination dots
+    for (let i = 0; i < pagination.length; i++) {
+      if (i === currentImageIndex) {
+        pagination[i].classList.add('bg-[#c2282d]');
+        pagination[i].classList.remove('bg-[#d9d9d9]');
+      } else {
+        pagination[i].classList.add('bg-[#d9d9d9]');
+        pagination[i].classList.remove('bg-[#c2282d]');
+      }
+    }
+  }
+
+  // Start auto image change every 3 seconds
+  setInterval(changeImage, 3000);
+
+  // Initial setup to set the first image
+  changeImage();
+</script>
+
 
   
 
