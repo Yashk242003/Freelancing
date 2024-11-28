@@ -147,10 +147,10 @@
     </div>      
   
     <!-- Scrollable Product Cards -->
-    <div class="w-full h-auto overflow-x-auto mt-4">
-      <div class="flex gap-4 sm:gap-6 overflow-x-auto pb-4 flex-wrap justify-center">
+    <div class="w-full h-auto overflow-x-auto mt-4 hide-scrollbar">
+      <div class="flex gap-4 sm:gap-6 pb-4 flex-nowrap justify-center">
         <!-- Product Item Template -->
-        <div class="product-card">
+        <div class="product-card flex-shrink-0 w-[calc(25%-1rem)] sm:w-[calc(25%-1.5rem)] md:w-[calc(25%-1.5rem)] lg:w-[calc(20%-1.5rem)]">
           <div class="w-full text-center">
             <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
             <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
@@ -159,7 +159,7 @@
         </div>
   
         <!-- Repeat Product Item with different text and images -->
-        <div class="product-card">
+        <div class="product-card flex-shrink-0 w-[calc(25%-1rem)] sm:w-[calc(25%-1.5rem)] md:w-[calc(25%-1.5rem)] lg:w-[calc(20%-1.5rem)]">
           <div class="w-full text-center">
             <div class="text-black text-lg sm:text-xl font-bold">DELTA</div>
             <div class="text-black text-xs sm:text-sm">COB</div>
@@ -167,7 +167,7 @@
           <img class="w-full h-[120px] sm:h-[135px] object-contain" src="Delta 1.png" alt="DELTA COB" />
         </div>
   
-        <div class="product-card">
+        <div class="product-card flex-shrink-0 w-[calc(25%-1rem)] sm:w-[calc(25%-1.5rem)] md:w-[calc(25%-1.5rem)] lg:w-[calc(20%-1.5rem)]">
           <div class="w-full text-center">
             <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
             <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
@@ -175,16 +175,51 @@
           <img class="w-full h-[120px] sm:h-[135px] object-contain" src="Delta 1.png" alt="RIMLESS DOWNLIGHT" />
         </div>
   
-        <div class="product-card">
+        <div class="product-card flex-shrink-0 w-[calc(25%-1rem)] sm:w-[calc(25%-1.5rem)] md:w-[calc(25%-1.5rem)] lg:w-[calc(20%-1.5rem)]">
           <div class="w-full text-center">
             <div class="text-black text-lg sm:text-xl font-bold">RIMLESS</div>
             <div class="text-black text-xs sm:text-sm">DOWNLIGHT</div>
           </div>
           <img class="w-full h-[120px] sm:h-[135px] object-contain" src="k1.png" alt="RIMLESS DOWNLIGHT" />
         </div>
+  
+        <!-- Hidden cards that will be outside the view -->
+        <div class="product-card flex-shrink-0 w-[calc(25%-1rem)] sm:w-[calc(25%-1.5rem)] md:w-[calc(25%-1.5rem)] lg:w-[calc(20%-1.5rem)]">
+          <div class="w-full text-center">
+            <div class="text-black text-lg sm:text-xl font-bold">PRODUCT 5</div>
+            <div class="text-black text-xs sm:text-sm">CATEGORY</div>
+          </div>
+          <img class="w-full h-[120px] sm:h-[135px] object-contain" src="k1.png" alt="PRODUCT 5" />
+        </div>
+  
+        <div class="product-card flex-shrink-0 w-[calc(25%-1rem)] sm:w-[calc(25%-1.5rem)] md:w-[calc(25%-1.5rem)] lg:w-[calc(20%-1.5rem)]">
+          <div class="w-full text-center">
+            <div class="text-black text-lg sm:text-xl font-bold">PRODUCT 6</div>
+            <div class="text-black text-xs sm:text-sm">CATEGORY</div>
+          </div>
+          <img class="w-full h-[120px] sm:h-[135px] object-contain" src="Delta 1.png" alt="PRODUCT 6" />
+        </div>
+  
+        <!-- Add more products as needed -->
       </div>
     </div>
   </section>
+  
+  <!-- Add this CSS inside your style tag or external CSS file -->
+  <style>
+    /* Hide scrollbar but allow horizontal scrolling */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;      /* Firefox */
+    }
+  </style>
+  
+  
+  
   
   <style>
     .product-card {
