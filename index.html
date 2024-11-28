@@ -19,20 +19,21 @@
 </head>
 <body class="bg-white-100">
   <!-- Header -->
+  <!-- Header -->
   <header class="bg-white shadow-md">
     <div class="w-full h-[89px] px-4 py-4 bg-white shadow flex justify-between items-center">
-      <img class="w-[120px] h-[60px] ml-4 sm:ml-10" src="./image/Logo.png" alt="Logo">
+      <img class="w-[120px] h-[60px] ml-4 sm:ml-10" src="Logo.png" alt="Logo">
       <div class="lg:hidden flex items-center cursor-pointer" id="hamburger-icon">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </div>
       <div class="hidden lg:flex items-center gap-6 mr-4 sm:mr-10">
-        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
-        <a href="About.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
-        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
-        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
-        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="index.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="about.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="indoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="outdoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="decorative.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
         <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
       </div>
     </div>
@@ -42,12 +43,12 @@
         <button class="text-2xl" id="close-sidebar">×</button>
       </div>
       <nav class="flex flex-col items-center gap-6 p-4">
-        <a href="#" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
-        <a href="#about" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
-        <a href="#indoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
-        <a href="#outdoor-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
-        <a href="#decorative-lights" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
-        <a href="#partner" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
+        <a href="index.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Home</a>
+        <a href="about.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">About Us</a>
+        <a href="indoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Indoor Lights</a>
+        <a href="outdoor.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Outdoor Lights</a>
+        <a href="decorative.html" class="text-[#545454] text-sm sm:text-base font-medium hover:text-[#c2282d]">Decorative Lights</a>
+        <a href="Partner.html" class="bg-[#c2282d] text-white py-2 px-4 sm:py-2 sm:px-6 rounded hover:bg-[#a31d26]">Become Partner</a>
       </nav>
     </div>
     <div class="fixed inset-0 bg-gray-500 bg-opacity-50 z-40 hidden" id="overlay"></div>
@@ -56,23 +57,37 @@
       const sidebar = document.getElementById('sidebar');
       const closeSidebar = document.getElementById('close-sidebar');
       const overlay = document.getElementById('overlay');
-
+      const body = document.body;
+  
+      // Show sidebar and disable scrolling
       hamburgerIcon.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(0)';
         overlay.classList.remove('hidden');
+        body.classList.add('overflow-hidden'); // Prevent scrolling
       });
-
+  
+      // Hide sidebar and enable scrolling
       closeSidebar.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(100%)';
         overlay.classList.add('hidden');
+        body.classList.remove('overflow-hidden'); // Restore scrolling
       });
-
+  
       overlay.addEventListener('click', () => {
         sidebar.style.transform = 'translateX(100%)';
         overlay.classList.add('hidden');
+        body.classList.remove('overflow-hidden'); // Restore scrolling
       });
     </script>
   </header>
+  
+  <!-- Add this CSS -->
+  <style>
+    /* Prevent scrolling when overflow-hidden is added to body */
+    body.overflow-hidden {
+      overflow: hidden;
+    }
+  </style>
 
   <section 
   class="w-full max-w-[90%] sm:max-w-[1024px] md:max-w-[1226px] h-[300px] sm:h-[400px] md:h-[441px] relative mx-auto mt-[60px] rounded-xl transition-all duration-1000" 
