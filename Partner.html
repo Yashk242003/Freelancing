@@ -105,81 +105,93 @@
         </div>
   
        <!-- Partner Form Section -->
-     <form id="partner-form" class="w-full sm:w-[915px] mx-auto bg-white rounded-[5px] shadow p-6 sm:p-12 absolute top-[78%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 mt-[200px] sm:mt-0">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!-- First Name -->
-        <div class="flex flex-col w-full">
-          <label for="firstname" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">First Name</label>
-          <input type="text" id="firstname" name="firstname" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
-        </div>
-  
-        <!-- Last Name -->
-        <div class="flex flex-col w-full">
-          <label for="lastname" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Last Name</label>
-          <input type="text" id="lastname" name="lastname" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
-        </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decorative Lights</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-white-100">
+
+<!-- Updated form with id "partner-form" -->
+<form id="partner-form" class="w-full sm:w-[915px] mx-auto bg-white rounded-[5px] shadow p-6 sm:p-12 absolute top-[78%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 mt-[200px] sm:mt-0">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <!-- First Name -->
+      <div class="flex flex-col w-full">
+        <label for="firstname" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">First Name</label>
+        <input type="text" id="firstname" name="firstname" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
       </div>
-  
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-        <!-- Email -->
-        <div class="flex flex-col w-full">
-          <label for="email" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Email</label>
-          <input type="email" id="email" name="email" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
-        </div>
-  
-        <!-- Business Name -->
-        <div class="flex flex-col w-full">
-          <label for="businessname" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Business Name</label>
-          <input type="text" id="businessname" name="businessname" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
-        </div>
+
+      <!-- Last Name -->
+      <div class="flex flex-col w-full">
+        <label for="lastname" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Last Name</label>
+        <input type="text" id="lastname" name="lastname" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
       </div>
-  
-      <!-- Address -->
-      <div class="flex flex-col w-full mt-6">
-        <label for="address" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Address</label>
-        <input type="text" id="address" name="address" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+      <!-- Email -->
+      <div class="flex flex-col w-full">
+        <label for="email" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Email</label>
+        <input type="email" id="email" name="email" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
       </div>
-  
-      <!-- Submit Button -->
-      <div class="flex justify-center sm:justify-end mt-[54px]">
-        <button type="submit" class="w-full sm:w-[149px] h-10 bg-[#c2282d] rounded text-center text-white text-sm font-semibold leading-normal tracking-tight">
-          Submit
-        </button>
+
+      <!-- Business Name -->
+      <div class="flex flex-col w-full">
+        <label for="businessname" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Business Name</label>
+        <input type="text" id="businessname" name="businessname" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
       </div>
-  </form>
-  
-  <script>
-    // Correctly target the form with id 'partner-form'
-    document.getElementById("partner-form").addEventListener("submit", function(e) {
-      e.preventDefault(); // Prevent the form from submitting normally
-      
-      // Create a FormData object, which will automatically collect all form data
-      var formData = new FormData(this);
-  
-      // Log the form data to ensure it's being captured correctly
-      formData.forEach(function(value, key) {
-        console.log(key + ": " + value);
-      });
-  
-      // Send the form data to Google Apps Script endpoint
-      fetch('https://script.google.com/macros/s/AKfycbxPZt2ae7w5eutfgB4QaLGuGxa2X0f1Y_lXrN8SJ2ciWhXp5Vl7q4tulinEYdLpwtIWjA/exec', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.text())
-      .then(responseText => {
-        console.log('Server Response:', responseText);
-        alert('Form submitted successfully');
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting the form');
-      });
-    });
-  </script>
-  
+    </div>
+
+    <!-- Address -->
+    <div class="flex flex-col w-full mt-6">
+      <label for="address" class="text-[#292c31] text-sm sm:text-base font-normal leading-normal tracking-tight">Address</label>
+      <input type="text" id="address" name="address" class="w-full h-10 mt-1 bg-[#f0f0f0] rounded-sm border border-[#525868] px-2" required />
+    </div>
+
+    <!-- Submit Button -->
+    <div class="flex justify-center sm:justify-end mt-[54px]">
+      <button type="submit" class="w-full sm:w-[149px] h-10 bg-[#c2282d] rounded text-center text-white text-sm font-semibold leading-normal tracking-tight">
+        Submit
+      </button>
+    </div>
+</form>
+<script>
+  // Correctly target the form with id 'partner-form'
+  document.getElementById("partner-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent the form from submitting normally
     
-  
+    // Create a FormData object, which will automatically collect all form data
+    var formData = new FormData(this);
+
+    // Log the form data to ensure it's being captured correctly
+    formData.forEach(function(value, key) {
+      console.log(key + ": " + value);
+    });
+
+    // Send the form data to Google Apps Script endpoint
+    fetch('https://script.google.com/macros/s/AKfycbxPZt2ae7w5eutfgB4QaLGuGxa2X0f1Y_lXrN8SJ2ciWhXp5Vl7q4tulinEYdLpwtIWjA/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(responseText => {
+      console.log('Server Response:', responseText);
+      alert('Form submitted successfully');
+      
+      // Optionally reset the form or take any further action
+      document.getElementById("partner-form").reset(); // Reset form fields after submission (optional)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error submitting the form');
+    });
+  });
+</script>
       </div>
     </div>
   </main>
