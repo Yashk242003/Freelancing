@@ -251,133 +251,40 @@
 font-family: 'Roboto', sans-serif;
 }
 </style>
- <section class="bg-cover bg-center text-white py-12 mt-[58px] md:mt-[131px] h-auto md:h-[413px] relative" style="background-image: url('11P.png');">
+  <section class="bg-cover bg-center text-white py-8 md:py-12 mt-[350px] md:mt-[131px] h-auto md:h-[413px] relative" style="background-image: url('11P.png');">
     <!-- Custom color overlay with 80% opacity -->
     <div class="absolute inset-0 bg-[#C2282D]/80"></div>
-  
-    <!-- Container for content, adjusted for responsiveness -->
-    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center relative px-4 md:px-0 my-auto">
-      <!-- Happy Clients -->
-      <div class="flex flex-col items-center">
-        <img src="s.png" alt="Happy Clients Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">50000+</h2>
-        <p class="text-base md:text-[24px]">Happy Clients</p>
-      </div>
-  
-      <!-- Industrial Projects -->
-      <div class="flex flex-col items-center">
-        <img src="s2.png" alt="Industrial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">45+</h2>
-        <p class="text-base md:text-[24px]">Industrial Projects</p>
-      </div>
-  
-      <!-- Commercial Projects -->
-      <div class="flex flex-col items-center">
-        <img src="s3.png" alt="Commercial Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">100K</h2>
-        <p class="text-base md:text-[24px]">Commercial Projects</p>
-      </div>
-  
-      <!-- Residential Projects -->
-      <div class="flex flex-col items-center">
-        <img src="s4.png" alt="Residential Projects Icon" class="w-[110px] h-[110px] md:w-[110px] md:h-[110px]" />
-        <h2 class="text-[32px] md:text-[48px] font-bold mt-2">1000+</h2>
-        <p class="text-base md:text-[24px]">Residential Projects</p>
-      </div>
-    </div>
-  </section>
-  
-  <style>
-    /* Mobile-first styling */
-    .container {
-      padding: 0 16px;
-    }
-  
-    /* Mobile Layout */
-    @media (max-width: 640px) {
-      .grid {
-        grid-template-columns: 1fr; /* One column on mobile */
-        gap: 16px;
-      }
-  
-      .grid .flex img {
-        width: 100px; /* Icon size for mobile */
-        height: 100px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 32px;
-      }
-  
-      .grid .flex p {
-        font-size: 20px;
-      }
-    }
-  
-    /* Tablet Layout */
-    @media (min-width: 641px) and (max-width: 1024px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
-        gap: 16px;
-      }
-  
-      .grid .flex img {
-        width: 100px;
-        height: 100px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 40px;
-      }
-  
-      .grid .flex p {
-        font-size: 22px;
-      }
-    }
-  
-    /* Desktop & Laptop Layout (MacBook/Notebook) */
-    @media (min-width: 1025px) and (max-width: 1440px) {
-      .grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
-        gap: 24px;
-      }
-  
-      .grid .flex img {
-        width: 120px;
-        height: 120px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 48px;
-      }
-  
-      .grid .flex p {
-        font-size: 24px;
-      }
-    }
-  
-    /* Larger Desktop Layout */
-    @media (min-width: 1441px) {
-      .grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
-        gap: 24px;
-      }
-  
-      .grid .flex img {
-        width: 120px;
-        height: 120px;
-      }
-  
-      .grid .flex h2 {
-        font-size: 48px;
-      }
-  
-      .grid .flex p {
-        font-size: 24px;
-      }
-    }
-  </style>
 
+    <div class="container mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 text-center relative px-4 md:px-6 mt-4 md:mt-6">
+        <!-- Happy Clients -->
+        <div class="flex flex-col items-center">
+            <img src="s.png" alt="Happy Clients Icon" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]" />
+            <h2 class="text-[18px] sm:text-[24px] md:text-[32px] lg:text-[40px] font-bold mt-2">50000+</h2>
+            <p class="text-sm sm:text-base md:text-lg lg:text-[20px]">Happy Clients</p>
+        </div>
+
+        <!-- Industrial Projects -->
+        <div class="flex flex-col items-center">
+            <img src="s2.png" alt="Industrial Projects Icon" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]" />
+            <h2 class="text-[18px] sm:text-[24px] md:text-[32px] lg:text-[40px] font-bold mt-2">45+</h2>
+            <p class="text-sm sm:text-base md:text-lg lg:text-[20px]">Industrial Projects</p>
+        </div>
+
+        <!-- Commercial Projects -->
+        <div class="flex flex-col items-center">
+            <img src="s3.png" alt="Commercial Projects Icon" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]" />
+            <h2 class="text-[18px] sm:text-[24px] md:text-[32px] lg:text-[40px] font-bold mt-2">100K</h2>
+            <p class="text-sm sm:text-base md:text-lg lg:text-[20px]">Commercial Projects</p>
+        </div>
+
+        <!-- Residential Projects -->
+        <div class="flex flex-col items-center">
+            <img src="s4.png" alt="Residential Projects Icon" class="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]" />
+            <h2 class="text-[18px] sm:text-[24px] md:text-[32px] lg:text-[40px] font-bold mt-2">1000+</h2>
+            <p class="text-sm sm:text-base md:text-lg lg:text-[20px]">Residential Projects</p>
+        </div>
+    </div>
+</section>
 <!-- Combined Section with Horizontal Layout -->
 <section class="flex flex-wrap sm:flex-nowrap justify-center items-center sm:ml-[100px] sm:mr-[100px] sm:mt-[100px] mt-[100px] mx-auto gap-[30px] px-4">
     <!-- First Section (About Trabo with Image Background) -->
